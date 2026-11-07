@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#1a1033">
+<meta name="theme-color" content="#0f172a">
 <title>Happy Birthday 🎁</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* ================= VARIABEL WARNA (TEMA LAKI-LAKI) ================= */
   :root {
-    --pink: #ff8fc7;
-    --pink-light: #ffc4e1;
-    --pink-deep: #ff5fa8;
-    --purple: #a86fe0;
-    --purple-deep: #3a2a5a;
+    --primary: #3b82f6;         /* Biru */
+    --primary-light: #60a5fa;   /* Biru Muda */
+    --primary-deep: #1e3a8a;    /* Biru Gelap */
+    --accent: #fbbf24;          /* Emas/Kuning untuk aksen */
+    --bg-dark: #0f172a;         /* Latar belakang gelap */
+    --text-main: #f8fafc;       /* Putih bersih */
   }
 
   * {
@@ -29,8 +31,8 @@
     width: 100%;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: hidden;
-    color: #fff;
-    background: linear-gradient(180deg, #1a1033 0%, #2a1b4a 45%, #3a2a5a 100%);
+    color: var(--text-main);
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 45%, #0f172a 100%);
   }
 
   /* ================= BACKGROUND ================= */
@@ -50,23 +52,17 @@
     position: absolute;
     bottom: -120px;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04) 60%, transparent 70%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: radial-gradient(circle at 30% 30%, rgba(96, 165, 250, 0.15), rgba(59, 130, 246, 0.05) 60%, transparent 70%);
+    border: 1px solid rgba(96, 165, 250, 0.1);
     animation: bubbleFloat linear infinite;
     will-change: transform;
   }
 
   @keyframes bubbleFloat {
-    0% {
-      transform: translateY(0) translateX(0);
-      opacity: 0;
-    }
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
     10% { opacity: 0.9; }
     90% { opacity: 0.9; }
-    100% {
-      transform: translateY(-120vh) translateX(30px);
-      opacity: 0;
-    }
+    100% { transform: translateY(-120vh) translateX(30px); opacity: 0; }
   }
 
   .mountains {
@@ -99,16 +95,16 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    color: #fff;
+    color: var(--primary-light);
     font-size: 18px;
     cursor: pointer;
     transition: transform 0.2s, background 0.2s;
   }
-  .music-btn:hover { background: rgba(255, 255, 255, 0.18); }
+  .music-btn:hover { background: rgba(30, 41, 59, 0.9); }
   .music-btn:active { transform: scale(0.9); }
 
   /* ================= SCREENS ================= */
@@ -148,11 +144,11 @@
     max-width: 460px;
     padding: 28px 22px;
     border-radius: 26px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(30, 41, 59, 0.5);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     text-align: center;
     animation: cardIn 0.7s cubic-bezier(0.19, 1, 0.22, 1) both;
   }
@@ -168,7 +164,7 @@
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 6px;
-    background: linear-gradient(90deg, #ffc4e1, #ff8fc7, #c79fff, #ffc4e1);
+    background: linear-gradient(90deg, #60a5fa, #3b82f6, #93c5fd, #60a5fa);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -184,15 +180,52 @@
   .subtitle {
     font-size: 14px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 18px;
   }
 
   .hint {
     font-size: 12.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.5);
     margin-top: 14px;
     font-style: italic;
+  }
+
+  /* ================= INPUT PIN ================= */
+  .input-wrapper {
+    margin: 20px 0;
+  }
+  
+  .code-input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid rgba(96, 165, 250, 0.4);
+    border-radius: 16px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    outline: none;
+    background: rgba(15, 23, 42, 0.8);
+    color: #fff;
+    letter-spacing: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .code-input:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+  }
+  .code-input::placeholder {
+    letter-spacing: normal;
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .error-msg {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 500;
+    display: none;
   }
 
   /* ================= GAME GRID ================= */
@@ -238,19 +271,19 @@
   }
 
   .card-front {
-    background: linear-gradient(135deg, rgba(255, 143, 199, 0.28), rgba(168, 111, 224, 0.28));
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(30, 58, 138, 0.5));
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: rgba(255, 255, 255, 0.4);
     font-weight: 700;
     font-size: 20px;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
   }
 
   .card-back {
-    background: linear-gradient(135deg, #ff8fc7, #a86fe0);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+    border: 1px solid rgba(96, 165, 250, 0.5);
     transform: rotateY(180deg);
-    box-shadow: 0 0 20px rgba(255, 143, 199, 0.35);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
   }
 
   .card.matched .card-back {
@@ -282,7 +315,7 @@
     transform: translateX(-50%);
     width: 200px;
     height: 14px;
-    background: linear-gradient(180deg, #e8d9ff, #9c7bc9);
+    background: linear-gradient(180deg, #cbd5e1, #64748b);
     border-radius: 50%;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
   }
@@ -292,14 +325,14 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 12px 12px 8px 8px;
-    box-shadow: inset 0 -10px 0 rgba(0, 0, 0, 0.12), 0 6px 18px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 -10px 0 rgba(0, 0, 0, 0.15), 0 6px 18px rgba(0, 0, 0, 0.3);
   }
 
   .layer-bottom {
     bottom: 10px;
     width: 170px;
     height: 72px;
-    background: linear-gradient(180deg, #ff9bc9, #ff5fa8);
+    background: linear-gradient(180deg, #3b82f6, #1e3a8a);
   }
   .layer-bottom::before {
     content: '';
@@ -308,7 +341,7 @@
     left: 0;
     right: 0;
     height: 16px;
-    background: linear-gradient(180deg, #ffd0e6, #ff9bc9);
+    background: linear-gradient(180deg, #93c5fd, #3b82f6);
     border-radius: 12px 12px 50% 50% / 12px 12px 18px 18px;
   }
 
@@ -316,7 +349,7 @@
     bottom: 82px;
     width: 130px;
     height: 58px;
-    background: linear-gradient(180deg, #ffb6d9, #ff8fc7);
+    background: linear-gradient(180deg, #60a5fa, #3b82f6);
   }
   .layer-top::before {
     content: '';
@@ -325,7 +358,7 @@
     left: 0;
     right: 0;
     height: 14px;
-    background: linear-gradient(180deg, #ffe3f0, #ffb6d9);
+    background: linear-gradient(180deg, #bfdbfe, #60a5fa);
     border-radius: 12px 12px 50% 50% / 12px 12px 16px 16px;
   }
 
@@ -340,7 +373,7 @@
     background-image: radial-gradient(circle, #fff 0 2px, transparent 2.5px);
     background-size: 14px 8px;
     background-repeat: repeat-x;
-    opacity: 0.5;
+    opacity: 0.3;
     pointer-events: none;
   }
 
@@ -351,10 +384,10 @@
     transform: translateX(-50%);
     width: 14px;
     height: 48px;
-    background: repeating-linear-gradient(45deg, #ffffff 0 7px, #ff8fc7 7px 14px);
+    background: repeating-linear-gradient(45deg, #ffffff 0 7px, #3b82f6 7px 14px);
     border-radius: 3px;
     z-index: 3;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
   .flame {
@@ -364,9 +397,9 @@
     transform: translateX(-50%);
     width: 16px;
     height: 26px;
-    background: radial-gradient(ellipse at center bottom, #fff59d 0%, #ffb74d 45%, #ff6f00 75%, #ff3d00 100%);
+    background: radial-gradient(ellipse at center bottom, #fff59d 0%, #fbbf24 45%, #f59e0b 75%, #ef4444 100%);
     border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
-    box-shadow: 0 0 22px #ffb74d, 0 0 48px #ff9800, 0 0 70px rgba(255, 152, 0, 0.5);
+    box-shadow: 0 0 22px #fbbf24, 0 0 48px #f59e0b, 0 0 70px rgba(245, 158, 11, 0.5);
     animation: flicker 0.32s infinite alternate ease-in-out;
     transform-origin: center bottom;
     will-change: transform;
@@ -426,7 +459,7 @@
   .wish-text {
     font-size: 14.5px;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.85);
     margin: 10px 6px 22px;
   }
 
@@ -436,7 +469,7 @@
     padding: 14px 34px;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(135deg, #ff6eb4, #a86fe0);
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
     color: #fff;
     font-family: inherit;
     font-size: 15px;
@@ -444,13 +477,13 @@
     letter-spacing: 0.4px;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 10px 26px rgba(255, 110, 180, 0.4);
+    box-shadow: 0 10px 26px rgba(59, 130, 246, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.4s ease;
   }
 
   .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 32px rgba(255, 110, 180, 0.55);
+    box-shadow: 0 14px 32px rgba(59, 130, 246, 0.5);
   }
 
   .btn:active { transform: scale(0.96); }
@@ -471,9 +504,9 @@
     height: 96px;
     margin: 0 auto 14px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 143, 199, 0.4), rgba(168, 111, 224, 0.4));
-    border: 3px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 0 26px rgba(255, 143, 199, 0.45), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(30, 58, 138, 0.5));
+    border: 3px solid rgba(96, 165, 250, 0.4);
+    box-shadow: 0 0 26px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -482,8 +515,8 @@
   }
 
   @keyframes avatarPulse {
-    0%, 100% { box-shadow: 0 0 26px rgba(255, 143, 199, 0.45), inset 0 0 20px rgba(255, 255, 255, 0.1); }
-    50% { box-shadow: 0 0 40px rgba(255, 143, 199, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.15); }
+    0%, 100% { box-shadow: 0 0 26px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.2); }
   }
 
   .avatar svg {
@@ -499,7 +532,7 @@
     text-align: left;
     font-size: 14px;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(255, 255, 255, 0.9);
     white-space: pre-wrap;
     word-break: break-word;
     margin-bottom: 6px;
@@ -510,7 +543,7 @@
     display: inline-block;
     width: 2px;
     height: 1em;
-    background: #ff8fc7;
+    background: var(--primary-light);
     margin-left: 2px;
     vertical-align: text-bottom;
     animation: blink 0.9s step-end infinite;
@@ -555,8 +588,8 @@
 <div class="bg-layer">
   <div class="bubbles" id="bubbles"></div>
   <svg class="mountains" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,213.3C840,224,960,224,1080,208C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill="#0d0722" opacity="0.9"/>
-    <path d="M0,288L80,272C160,256,320,224,480,229.3C640,235,800,277,960,282.7C1120,288,1280,256,1360,240L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" fill="#07031a" opacity="0.98"/>
+    <path d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,213.3C840,224,960,224,1080,208C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill="#020617" opacity="0.9"/>
+    <path d="M0,288L80,272C160,256,320,224,480,229.3C640,235,800,277,960,282.7C1120,288,1280,256,1360,240L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" fill="#000000" opacity="0.98"/>
   </svg>
 </div>
 
@@ -564,13 +597,30 @@
 
 <button class="music-btn" id="musicBtn" aria-label="Toggle music">🔇</button>
 
+<!-- ============ SCREEN 0: MASUKKAN PIN ============ -->
+<div class="screen active" id="screen0">
+  <div class="glass">
+    <div style="font-size: 40px; margin-bottom: 10px;">🔒</div>
+    <h1 class="title">Akses Dibatasi</h1>
+    <p class="subtitle">Masukkan PIN rahasia untuk membuka kejutan ini!</p>
+    
+    <div class="input-wrapper">
+      <input type="password" id="pinInput" class="code-input" placeholder="Ketik PIN di sini..." maxlength="6">
+      <div id="pinError" class="error-msg">PIN salah, coba lagi yaw! 🥺</div>
+    </div>
+    
+    <button class="btn" id="unlockBtn">Buka Kejutan 🚀</button>
+    <p class="hint">Psst... tanya ke aku kalau lupa PIN-nya!</p>
+  </div>
+</div>
+
 <!-- ============ SCREEN 1: GAME ============ -->
-<div class="screen active" id="screen1">
+<div class="screen" id="screen1">
   <div class="glass">
     <h1 class="title">A Little Game for You 🎁</h1>
-    <p class="subtitle">Balik 2 Kartu yang Sama! 🥺</p>
+    <p class="subtitle">Balik 2 Kartu yang Sama! 🧩</p>
     <div class="game-grid" id="gameGrid"></div>
-    <p class="hint">Cocokkan semua kartu untuk membuka kejutan ✨</p>
+    <p class="hint">Cocokkan semua kartu untuk lanjut ke tahap berikutnya ✨</p>
   </div>
 </div>
 
@@ -587,7 +637,7 @@
       <div class="layer layer-bottom"></div>
       <div class="plate"></div>
     </div>
-    <p class="wish-text">Tutup matamu, buat permintaan,<br>lalu tiup lilinnya yaw! 🥺</p>
+    <p class="wish-text">Tutup matamu, buat permintaan,<br>lalu tiup lilinnya yaw! 💨</p>
     <button class="btn" id="blowBtn">Tiup Lilin 🎂</button>
   </div>
 </div>
@@ -606,8 +656,8 @@
           <circle cx="31" cy="57" r="2.5" fill="#3a2418"/>
           <circle cx="45" cy="57" r="2.5" fill="#3a2418"/>
           <ellipse cx="38" cy="66" rx="4" ry="3" fill="#3a2418"/>
-          <ellipse cx="25" cy="66" rx="3.5" ry="2.5" fill="#ff8fc7" opacity="0.65"/>
-          <ellipse cx="51" cy="66" rx="3.5" ry="2.5" fill="#ff8fc7" opacity="0.65"/>
+          <ellipse cx="25" cy="66" rx="3.5" ry="2.5" fill="#93c5fd" opacity="0.65"/>
+          <ellipse cx="51" cy="66" rx="3.5" ry="2.5" fill="#93c5fd" opacity="0.65"/>
         </g>
         <g>
           <circle cx="82" cy="60" r="22" fill="#c89666"/>
@@ -618,12 +668,12 @@
           <circle cx="75" cy="57" r="2.5" fill="#3a2418"/>
           <circle cx="89" cy="57" r="2.5" fill="#3a2418"/>
           <ellipse cx="82" cy="66" rx="4" ry="3" fill="#3a2418"/>
-          <ellipse cx="69" cy="66" rx="3.5" ry="2.5" fill="#ff8fc7" opacity="0.65"/>
-          <ellipse cx="95" cy="66" rx="3.5" ry="2.5" fill="#ff8fc7" opacity="0.65"/>
+          <ellipse cx="69" cy="66" rx="3.5" ry="2.5" fill="#93c5fd" opacity="0.65"/>
+          <ellipse cx="95" cy="66" rx="3.5" ry="2.5" fill="#93c5fd" opacity="0.65"/>
         </g>
       </svg>
     </div>
-    <h1 class="title letter-title">Happy Birthday yaw! 🥺</h1>
+    <h1 class="title letter-title">Happy Birthday! 🎉</h1>
     <div class="letter-body" id="letterBody"><span id="typed"></span><span class="cursor" id="cursor"></span></div>
     <a class="btn wa-btn" id="waBtn" href="#" target="_blank" rel="noopener">Balas 💌</a>
   </div>
@@ -633,17 +683,21 @@
 /* ============================================================
    KONFIGURASI — GANTI DI SINI
    ============================================================ */
-const WA_NUMBER  = '6281234567890';   // Ganti nomor WhatsApp (format internasional tanpa +, contoh: 6281234567890)
-const WA_MESSAGE = 'Makasih ya udah bikin hari ulang tahunku jadi spesial 🥺💖';
+// 1. GANTI PIN RAHASIA DI SINI
+const SECRET_PIN = "123456"; // Bebas mau angka atau huruf
+
+// 2. GANTI NOMOR WA & PESAN
+const WA_NUMBER  = '6288232373283';   
+const WA_MESSAGE = 'Makasih ya udah bikin hari ulang tahunku jadi spesial 🎉';
 
 const LETTER_TEXT =
 `Kita make a wish di hari ulang tahunmu ini yaa 🥺 Semoga kamu selalu diberi kesehatan, hati yang tenang, dan langkah yang dimudahkan dalam setiap rencana baikmu serta kebahagiaan selalu menyertaimu 🫶
 
-Semoga di usia yang baru ini, kamu makin kuat, makin sabar, dan makin percaya sama diri sendiri. Apa pun yang kamu impikan, pelan-pelan semoga satu per satu bisa terwujud dengan cara terbaik 💕
+Semoga di usia yang baru ini, kamu makin kuat, makin sabar, dan makin percaya sama diri sendiri. Apa pun yang kamu impikan, pelan-pelan semoga satu per satu bisa terwujud dengan cara terbaik 💪
 
 Semangat terus buat kejar semua keinginan kamu, jangan pernah takut gagal yaa, aku selalu dukung kamu dan support kamu di sini. Oh ya, jangan lupa untuk selalu bersyukur yaa ✨
 
-Terakhir, Happy Level Up Day And.... Have a Fabulous Birthday 🥺`;
+Terakhir, Happy Level Up Day And.... Have a Fabulous Birthday 🎉`;
 /* ============================================================ */
 
 
@@ -671,7 +725,8 @@ const ctx = confettiCanvas.getContext('2d');
 let CW, CH;
 let particles = [];
 
-const CONFETTI_COLORS = ['#ff8fc7', '#ffd93d', '#a86fe0', '#ff5fa8', '#6ee7ff', '#ffffff', '#ffa94d', '#c79fff'];
+// Warna confetti disesuaikan (Biru, Cyan, Emas, Putih)
+const CONFETTI_COLORS = ['#3b82f6', '#60a5fa', '#fbbf24', '#93c5fd', '#ffffff', '#f59e0b', '#cbd5e1'];
 
 function resizeCanvas() {
   const dpr = window.devicePixelRatio || 1;
@@ -751,8 +806,34 @@ function fromTopFallCheck(p) {
 renderConfetti();
 
 
+/* ================= LOGIKA PIN ================= */
+const pinInput = document.getElementById('pinInput');
+const unlockBtn = document.getElementById('unlockBtn');
+const pinError = document.getElementById('pinError');
+
+function checkPin() {
+  const userInput = pinInput.value.trim();
+  if (userInput === SECRET_PIN) {
+    pinError.style.display = 'none';
+    burstConfetti(50, true);
+    goToScreen('screen0', 'screen1'); // Lanjut ke Game Kartu
+  } else {
+    pinError.style.display = 'block';
+    pinInput.style.borderColor = '#ef4444';
+    setTimeout(() => {
+      pinInput.style.borderColor = 'rgba(96, 165, 250, 0.4)';
+    }, 1000);
+  }
+}
+
+unlockBtn.addEventListener('click', checkPin);
+pinInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') checkPin();
+});
+
+
 /* ================= MEMORY GAME ================= */
-const EMOJIS = ['🎀', '🦄', '💝', '🎁', '🥺', '💖'];
+const EMOJIS = ['🎮', '🎧', '⚽', '🚀', '🎲', '💻']; // Emoji lebih netral/cowok
 const gameGrid = document.getElementById('gameGrid');
 
 let firstCard = null;
@@ -809,10 +890,8 @@ function onCardClick(card) {
     secondCard.classList.add('matched');
     matchedPairs++;
 
-    // Confetti kecil tiap pasangan cocok
     burstConfetti(20, false);
 
-    const a = firstCard, b = secondCard;
     firstCard = null;
     secondCard = null;
     lockBoard = false;
@@ -820,7 +899,7 @@ function onCardClick(card) {
     if (matchedPairs === EMOJIS.length) {
       setTimeout(() => {
         burstConfetti(70, true);
-        goToScreen2();
+        goToScreen('screen1', 'screen2'); // Lanjut ke Tiup Lilin
       }, 650);
     }
   } else {
@@ -837,23 +916,20 @@ function onCardClick(card) {
 buildGame();
 
 
-/* ================= TRANSISI SCREEN ================= */
-function goToScreen2() {
-  const s1 = document.getElementById('screen1');
-  s1.classList.add('exiting');
+/* ================= TRANSISI SCREEN (DIPERBARUI) ================= */
+function goToScreen(fromId, toId) {
+  const fromScreen = document.getElementById(fromId);
+  const toScreen = document.getElementById(toId);
+  
+  fromScreen.classList.add('exiting');
   setTimeout(() => {
-    s1.classList.remove('active', 'exiting');
-    document.getElementById('screen2').classList.add('active');
-  }, 480);
-}
-
-function goToScreen3() {
-  const s2 = document.getElementById('screen2');
-  s2.classList.add('exiting');
-  setTimeout(() => {
-    s2.classList.remove('active', 'exiting');
-    document.getElementById('screen3').classList.add('active');
-    startTypewriter();
+    fromScreen.classList.remove('active', 'exiting');
+    toScreen.classList.add('active');
+    
+    // Jika pindah ke screen3 (ucapan), mulai ngetik
+    if (toId === 'screen3') {
+      startTypewriter();
+    }
   }, 480);
 }
 
@@ -870,7 +946,9 @@ blowBtn.addEventListener('click', () => {
   burstConfetti(160, true);
   setTimeout(() => burstConfetti(90, true), 300);
 
-  setTimeout(goToScreen3, 1600);
+  setTimeout(() => {
+    goToScreen('screen2', 'screen3'); // Lanjut ke Ucapan
+  }, 1600);
 });
 
 
@@ -885,7 +963,6 @@ function startTypewriter() {
   const cursor = document.getElementById('cursor');
   const waBtn = document.getElementById('waBtn');
 
-  // Setup WA link
   waBtn.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_MESSAGE);
 
   const chars = Array.from(LETTER_TEXT);
@@ -924,17 +1001,10 @@ let musicLoopTimeout = null;
 const musicBtn = document.getElementById('musicBtn');
 
 const NOTE_FREQ = {
-  'G4': 392.00,
-  'A4': 440.00,
-  'B4': 493.88,
-  'C5': 523.25,
-  'D5': 587.33,
-  'E5': 659.25,
-  'F5': 698.46,
-  'G5': 783.99
+  'G4': 392.00, 'A4': 440.00, 'B4': 493.88, 'C5': 523.25,
+  'D5': 587.33, 'E5': 659.25, 'F5': 698.46, 'G5': 783.99
 };
 
-// [note, durasi dalam detik]
 const MELODY = [
   ['G4', 0.375], ['G4', 0.125], ['A4', 0.5], ['G4', 0.5], ['C5', 0.5], ['B4', 1.0],
   ['G4', 0.375], ['G4', 0.125], ['A4', 0.5], ['G4', 0.5], ['D5', 0.5], ['C5', 1.0],
@@ -1001,8 +1071,7 @@ musicBtn.addEventListener('click', () => {
 
 /* ================= TAP ANYWHERE = CONFETTI ================= */
 document.addEventListener('click', (e) => {
-  if (e.target.closest('button') || e.target.closest('a')) return;
-  // Burst kecil di posisi tap
+  if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input')) return;
   const x = e.clientX, y = e.clientY;
   for (let i = 0; i < 14; i++) {
     particles.push({
@@ -1020,10 +1089,6 @@ document.addEventListener('click', (e) => {
     });
   }
 });
-
-
-/* ================= WELCOME BURST ================= */
-setTimeout(() => burstConfetti(60, true), 500);
 </script>
 </body>
 </html>
